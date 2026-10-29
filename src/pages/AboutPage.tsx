@@ -22,8 +22,8 @@ export const AboutPage: React.FC = () => {
       {/* Page Hero */}
       <PageHero
         title="About Dynamic Tooling Systems"
-        subtitle="Established in 2004 in Hosur, Tamil Nadu. A trusted partner in automotive press tools, sheet metal components, and precision CNC machining."
-        badge="Company Overview & Heritage"
+        subtitle="Established in Hosur in 2004, DTS makes automotive press tools, sheet metal components, and machined parts."
+        badge="Company Overview"
         breadcrumb={[{ label: 'About Us' }]}
       />
 
@@ -35,15 +35,15 @@ export const AboutPage: React.FC = () => {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center space-x-2 text-xs font-bold text-dts-accent uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
                 <Factory className="w-3.5 h-3.5" />
-                <span>Our Heritage & Growth</span>
+                <span>Company history</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-dts-navy tracking-tight leading-tight">
-                From Precision Sheet Metal to an Integrated Automotive Tooling Partner
+                From sheet metal parts to integrated tooling
               </h2>
 
               <p className="text-base text-slate-700 leading-relaxed">
-                <strong className="text-dts-navy font-semibold">Dynamic Tooling Systems (DTS)</strong> was established in 2004 in Hosur, Tamil Nadu. The company began its operations as a small-scale industry manufacturing precision sheet metal components. Over the years, guided by an unwavering commitment to high-quality craftsmanship, rigorous dimensional adherence, and on-time deliveries, DTS grew in size, operational scope, and technical depth into a well-respected medium-scale manufacturing industry.
+                <strong className="text-dts-navy font-semibold">Dynamic Tooling Systems (DTS)</strong> was established in Hosur in 2004 to manufacture sheet metal components. The company has since expanded its tooling, machining, stamping, and inspection operations.
               </p>
 
               <p className="text-base text-slate-700 leading-relaxed">
@@ -119,10 +119,10 @@ export const AboutPage: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center space-x-2 text-xs font-bold text-dts-accent uppercase tracking-wider bg-white px-3 py-1 rounded-full border border-slate-200 mb-3">
               <Users className="w-3.5 h-3.5" />
-              <span>Technical Excellence</span>
+              <span>Engineering team</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-dts-navy tracking-tight">
-              Qualified Engineering & Inspection Teams
+              Engineering and inspection
             </h2>
             <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
               Our growth is driven by dedicated technical personnel and experienced toolmakers with deep familiarity in automotive dimensional standards and die kinematics.
@@ -191,19 +191,30 @@ export const AboutPage: React.FC = () => {
           <div className="bg-gradient-to-r from-dts-navy via-dts-charcoal to-dts-navy text-white rounded-2xl p-8 sm:p-12 lg:p-14 border border-slate-800 shadow-xl relative overflow-hidden">
             <div className="absolute inset-0 industrial-grid-dark opacity-10 pointer-events-none" />
 
-            <div className="max-w-3xl">
+            <div className="max-w-5xl">
               <div className="inline-flex items-center space-x-2 text-xs font-bold text-blue-300 uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-4">
                 <Target className="w-3.5 h-3.5" />
-                <span>Our Guiding Principles</span>
+                <span>Mission & Vision</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                Company Mission & Values
-              </h2>
-
-              <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed italic">
-                "{COMPANY_INFO.mission}"
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                    Our Mission
+                  </h2>
+                  <p className="mt-4 text-base text-slate-300 leading-relaxed">
+                    {COMPANY_INFO.mission}
+                  </p>
+                </div>
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                    Our Vision
+                  </h2>
+                  <p className="mt-4 text-base text-slate-300 leading-relaxed">
+                    {COMPANY_INFO.vision}
+                  </p>
+                </div>
+              </div>
 
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10">
                 <div className="space-y-2">
@@ -232,7 +243,7 @@ export const AboutPage: React.FC = () => {
                     <span>Quality Win</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Winning market trust through technical excellence, tight tolerances, and dependable delivery commitments.
+                    Built around controlled processes, dimensional checks, and planned deliveries.
                   </p>
                 </div>
               </div>
@@ -283,4 +294,3 @@ export const AboutPage: React.FC = () => {
     </div>
   );
 };
-

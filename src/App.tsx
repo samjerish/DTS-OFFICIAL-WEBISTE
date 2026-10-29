@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { StartupAnimation } from './components/StartupAnimation';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -34,36 +33,30 @@ const ScrollToTop: React.FC = () => {
 };
 
 export const App: React.FC = () => {
-  const [showStartup, setShowStartup] = useState(true);
   const basename = import.meta.env.PROD
     ? import.meta.env.BASE_URL.replace(/\/$/, '')
     : undefined;
 
   return (
-    <>
-      {showStartup && (
-        <StartupAnimation onComplete={() => setShowStartup(false)} />
-      )}
-      <Router basename={basename}>
-        <ScrollToTop />
-        <div className={`flex flex-col min-h-screen transition-opacity duration-1000 ${showStartup ? 'opacity-90' : 'opacity-100'}`}>
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/capabilities" element={<CapabilitiesPage />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/infrastructure" element={<InfrastructurePage />} />
-              <Route path="/gallery" element={<GalleryPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </>
+    <Router basename={basename}>
+      <ScrollToTop />
+      <div className="flex min-w-0 flex-col min-h-screen">
+        <Navbar />
+        <main className="min-w-0 flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/capabilities" element={<CapabilitiesPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/infrastructure" element={<InfrastructurePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

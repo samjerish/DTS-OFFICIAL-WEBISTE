@@ -27,9 +27,9 @@ export const ContactPage: React.FC = () => {
   const initialMode = searchParams.get('mode') || '';
 
   const initialSubject = initialProductParam 
-    ? `Product: ${initialProductParam}`
+    ? initialProductParam
     : initialServiceParam
-    ? `Capability: ${initialServiceParam}`
+    ? initialServiceParam
     : initialMode === 'quote'
     ? 'Request for Quotation (RFQ)'
     : '';
@@ -169,7 +169,7 @@ export const ContactPage: React.FC = () => {
                 <span>Hosur Industrial Plant</span>
               </div>
               <h2 className="text-2xl font-extrabold text-dts-navy tracking-tight">
-                Get in Touch with DTS
+                Get in Touch
               </h2>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Whether you have an immediate RFQ for automotive stamping or need expert tooling consultation for new vehicle programs, our qualified engineering team in Hosur is ready to assist.
@@ -287,7 +287,7 @@ export const ContactPage: React.FC = () => {
                   <span>Quotation & Project Inquiry Form</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-dts-navy">
-                  Send Your Project Specifications
+                  Contact Us
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1">
                   Please complete the form below. Our engineering desk will review your component parameters and contact you promptly.
@@ -354,7 +354,6 @@ export const ContactPage: React.FC = () => {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleChange}
-                      placeholder="e.g. Rajesh Kumar"
                       className={`w-full px-3.5 py-2.5 text-sm rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-dts-accent ${
                         errors.fullName ? 'border-red-500 bg-red-50/20' : 'border-slate-300'
                       }`}
@@ -380,7 +379,6 @@ export const ContactPage: React.FC = () => {
                       name="companyName"
                       value={formData.companyName}
                       onChange={handleChange}
-                      placeholder="e.g. Precision Auto Components Ltd."
                       className={`w-full px-3.5 py-2.5 text-sm rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-dts-accent ${
                         errors.companyName ? 'border-red-500 bg-red-50/20' : 'border-slate-300'
                       }`}
@@ -409,7 +407,6 @@ export const ContactPage: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="e.g. rajesh@company.com"
                       className={`w-full px-3.5 py-2.5 text-sm rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-dts-accent ${
                         errors.email ? 'border-red-500 bg-red-50/20' : 'border-slate-300'
                       }`}
@@ -435,7 +432,6 @@ export const ContactPage: React.FC = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="e.g. +91 9876543210"
                       className={`w-full px-3.5 py-2.5 text-sm rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-dts-accent ${
                         errors.phone ? 'border-red-500 bg-red-50/20' : 'border-slate-300'
                       }`}
@@ -567,4 +563,3 @@ export const ContactPage: React.FC = () => {
     </div>
   );
 };
-

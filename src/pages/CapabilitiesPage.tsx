@@ -22,8 +22,8 @@ export const CapabilitiesPage: React.FC = () => {
       {/* Page Hero */}
       <PageHero
         title="Manufacturing Capabilities"
-        subtitle="Comprehensive automotive tooling, precision press stamping, CNC milling, and product development services from our integrated Hosur facilities."
-        badge="Engineering Services"
+        subtitle="Press tool design, stamping, CNC milling, fixtures, and sample development from our Hosur facilities."
+        badge="Capabilities"
         breadcrumb={[{ label: 'Capabilities' }]}
       />
 
@@ -63,7 +63,7 @@ export const CapabilitiesPage: React.FC = () => {
               Press Tool Design & Manufacturing
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-              Dynamic Tooling Systems has built an outstanding reputation in the automotive sector for in-house design, machining, fitting, and proving of robust press tools engineered for high-volume automotive production.
+              Our Hosur tool room handles press tool design, machining, fitting, and tryout for automotive production.
             </p>
           </div>
 
@@ -402,4 +402,3 @@ export const CapabilitiesPage: React.FC = () => {
     </div>
   );
 };
-

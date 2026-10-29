@@ -26,7 +26,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center space-x-2 text-xs font-semibold text-dts-accent uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>ISO 9001:2015 Certified Manufacturing • Hosur Plant</span>
+                <span>ISO 9001:2015 Certified • Hosur</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -38,9 +38,9 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
               </p>
 
               <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-400 pt-2">
-                <span>✓ Tool Room & Press Shop In-House</span>
-                <span>✓ Rapid RFQ Review & Technical Feedback</span>
-                <span>✓ Direct Engineering Consultation</span>
+                <span>Tool Room & Press Shop in-house</span>
+                <span>Technical review for new requirements</span>
+                <span>Direct engineering contact</span>
               </div>
             </div>
 
@@ -76,4 +76,3 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
     </section>
   );
 };
-

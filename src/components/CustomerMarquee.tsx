@@ -11,13 +11,13 @@ export const CustomerMarquee: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center space-x-2 text-xs font-semibold text-dts-accent uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200 mb-3">
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Automotive Supply Relationships</span>
+            <span>Our Customers</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-dts-navy tracking-tight">
             Built for Automotive Manufacturing
           </h2>
           <p className="mt-3 text-sm sm:text-base text-dts-steel leading-relaxed">
-            Dynamic Tooling Systems supplies automotive manufacturers and tier-1 suppliers across India with precision press tools, stamped components, sub-assemblies, and specialized engineering development services.
+            We supply press tools, stamped components, sub-assemblies, and machining work to automotive manufacturers and tier-1 suppliers across India.
           </p>
         </div>
 
@@ -50,11 +50,10 @@ export const CustomerMarquee: React.FC = () => {
 
         {/* Verification Note */}
         <div className="mt-8 text-center text-xs text-slate-500">
-          Source: Verified automotive customers and tier-1 partners as documented in Dynamic Tooling Systems company profile.
+          Customers shown are listed in the DTS company profile.
         </div>
 
       </div>
     </section>
   );
 };
-

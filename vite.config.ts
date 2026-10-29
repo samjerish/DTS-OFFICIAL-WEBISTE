@@ -2,11 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: '/DTS-OFFICIAL-WEBISTE/',
+  base: mode === 'production' ? '/DTS-OFFICIAL-WEBISTE/' : '/',
   server: {
     port: 3000,
     open: false
   }
-});
+}));

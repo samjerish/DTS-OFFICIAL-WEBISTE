@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -21,6 +21,22 @@ import { CustomerMarquee } from '../components/CustomerMarquee';
 import { CtaSection } from '../components/CtaSection';
 
 export const HomePage: React.FC = () => {
+  const heroImages = [
+    'images/facilities/press-shop-bay-crane.jpg',
+    'images/facilities/press-shop-production-floor.jpg',
+    'images/facilities/tool-room-vmc-cnc-line.jpg',
+    'images/facilities/unit2-press-shop-exterior.jpg',
+  ];
+  const [heroImageIndex, setHeroImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setHeroImageIndex((currentIndex) => (currentIndex + 1) % heroImages.length);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, [heroImages.length]);
+
   // Map icon names to Lucide icons
   const getIcon = (name: string) => {
     switch (name) {
@@ -42,30 +58,32 @@ export const HomePage: React.FC = () => {
       {/* ========================================================
           HERO SECTION
           ======================================================== */}
-      <section className="relative min-h-[580px] lg:min-h-[660px] flex items-center bg-dts-navy text-white overflow-hidden">
-        {/* Background Manufacturing Image with Contrast Overlay */}
+      <section className="relative min-h-[600px] lg:min-h-[640px] flex items-center bg-dts-navy text-white overflow-hidden">
+        {/* Rotating manufacturing images */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="images/facilities/press-shop-bay-crane.jpg"
-            alt="Dynamic Tooling Systems Hosur Manufacturing Plant"
-            className="w-full h-full object-cover object-center filter brightness-[0.45] contrast-105"
-          />
-          {/* Gradients to ensure text readability */}
+          {heroImages.map((image, index) => (
+            <img
+              key={image}
+              src={image}
+              alt=""
+              aria-hidden="true"
+              className={`absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.45] contrast-105 transition-opacity duration-1000 ${
+                index === heroImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-r from-dts-navy via-dts-navy/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-dts-navy via-transparent to-black/30" />
           <div className="absolute inset-0 industrial-grid-dark opacity-15" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <div className="max-w-3xl">
-            
-            {/* Supporting Micro-Badge */}
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 text-blue-300 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-6">
-              <span className="w-2 h-2 rounded-full bg-dts-accent animate-pulse" />
-              <span>Established 2004 | Automotive Tooling | Precision Manufacturing | Hosur, India</span>
+            <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-blue-300 uppercase mb-7">
+              <span className="h-px w-10 bg-dts-accent" />
+              <span>Dynamic Tooling Systems</span>
             </div>
 
-            {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
               Precision Engineering. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-blue-200">
@@ -73,67 +91,42 @@ export const HomePage: React.FC = () => {
               </span>
             </h1>
 
-            {/* Supporting Description */}
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal">
-              Dynamic Tooling Systems delivers automotive tooling, press products, precision components, and CNC machining solutions with a commitment to quality and dependable delivery.
+            <p className="mt-6 max-w-2xl text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal">
+              DTS makes automotive tooling, press products, precision components, and CNC-machined parts for production programs.
             </p>
 
-            {/* CTAs */}
-            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="mt-9">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center space-x-2 bg-dts-accent hover:bg-dts-accent-hover text-white text-base font-semibold px-7 py-3.5 rounded-md shadow-lg transition-all transform active:scale-95"
+                className="inline-flex items-center justify-center gap-2 bg-dts-accent hover:bg-dts-accent-hover text-white text-sm font-semibold px-5 py-3 rounded-md shadow-lg transition-all transform active:scale-95"
               >
-                <span>Discuss Your Project</span>
+                <span>Get in Touch</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
-              <Link
-                to="/capabilities"
-                className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/30 text-base font-semibold px-6 py-3.5 rounded-md backdrop-blur-sm transition-all"
-              >
-                <span>Explore Our Capabilities</span>
-              </Link>
             </div>
 
-            {/* Key Quality Metrics Bar */}
-            <div className="mt-12 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-slate-300">
-              <div className="flex items-center space-x-2.5">
+            <div className="mt-12 pt-8 border-t border-white/15 flex flex-wrap gap-x-7 gap-y-3 text-xs text-slate-300">
+              <div className="flex items-center space-x-2.5 whitespace-nowrap">
                 <Calendar className="w-4 h-4 text-dts-accent shrink-0" />
-                <div>
-                  <span className="block font-bold text-white text-sm">2004</span>
-                  <span>Estd. in Hosur</span>
-                </div>
+                <span>Established 2004</span>
               </div>
 
-              <div className="flex items-center space-x-2.5">
+              <div className="flex items-center space-x-2.5 whitespace-nowrap">
                 <ShieldCheck className="w-4 h-4 text-dts-accent shrink-0" />
-                <div>
-                  <span className="block font-bold text-white text-sm">ISO 9001:2015</span>
-                  <span>Certified System</span>
-                </div>
+                <span>ISO 9001:2015</span>
               </div>
 
-              <div className="flex items-center space-x-2.5">
+              <div className="flex items-center space-x-2.5 whitespace-nowrap">
                 <Factory className="w-4 h-4 text-dts-accent shrink-0" />
-                <div>
-                  <span className="block font-bold text-white text-sm">Unit I & Unit II</span>
-                  <span>Integrated Plants</span>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2.5">
-                <Wrench className="w-4 h-4 text-dts-accent shrink-0" />
-                <div>
-                  <span className="block font-bold text-white text-sm">Up to 350 Ton</span>
-                  <span>Press Capacity</span>
-                </div>
+                <span>Two integrated units</span>
               </div>
             </div>
-
           </div>
         </div>
       </section>
+
+      <CustomerMarquee />
 
       {/* ========================================================
           COMPANY INTRODUCTION (Two-Column Layout)
@@ -158,7 +151,7 @@ export const HomePage: React.FC = () => {
               </p>
 
               <p className="text-base text-slate-700 leading-relaxed">
-                To meet rigorous automotive volume and quality standards, DTS operates a completely integrated manufacturing plant in Hosur, Tamil Nadu. Our manufacturing strength is backed by qualified engineers specializing in tooling design, precision machining, stamping operations, and quality inspection.
+                DTS operates an integrated manufacturing plant in Hosur, Tamil Nadu, with teams for tooling design, machining, stamping, and inspection.
               </p>
 
               {/* Value Bullet Points */}
@@ -166,32 +159,32 @@ export const HomePage: React.FC = () => {
                 <div className="flex items-start space-x-3 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
                   <CheckCircle2 className="w-5 h-5 text-dts-accent shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-sm text-dts-navy block">Automotive Experience</span>
-                    <span className="text-xs text-slate-600">Specialized tooling and stampings for two-wheelers, passenger cars, and commercial vehicles.</span>
+                    <span className="font-bold text-sm text-dts-navy block">Automotive work</span>
+                    <span className="text-xs text-slate-600">Tooling and stampings for two-wheelers, passenger cars, and commercial vehicles.</span>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
                   <CheckCircle2 className="w-5 h-5 text-dts-accent shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-sm text-dts-navy block">Integrated Operations</span>
-                    <span className="text-xs text-slate-600">Unit I Tool Room and Unit II Press Shop on-site for seamless die design and production.</span>
+                    <span className="font-bold text-sm text-dts-navy block">Two units</span>
+                    <span className="text-xs text-slate-600">Unit I Tool Room and Unit II Press Shop operate from the Hosur site.</span>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
                   <CheckCircle2 className="w-5 h-5 text-dts-accent shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-sm text-dts-navy block">Qualified Engineering Team</span>
-                    <span className="text-xs text-slate-600">Experienced designers, CNC machinists, toolmakers, and quality inspection engineers.</span>
+                    <span className="font-bold text-sm text-dts-navy block">Engineering team</span>
+                    <span className="text-xs text-slate-600">Designers, CNC machinists, toolmakers, and inspection staff.</span>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
                   <CheckCircle2 className="w-5 h-5 text-dts-accent shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-sm text-dts-navy block">Dependable Delivery</span>
-                    <span className="text-xs text-slate-600">Structured manufacturing planning ensuring on-time supply to automotive assembly lines.</span>
+                    <span className="font-bold text-sm text-dts-navy block">Planned production</span>
+                    <span className="text-xs text-slate-600">Production planning for regular supply to automotive assembly lines.</span>
                   </div>
                 </div>
               </div>
@@ -549,11 +542,6 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          CUSTOMER SECTION (Verified Automotive Clients)
-          ======================================================== */}
-      <CustomerMarquee />
-
-      {/* ========================================================
           FINAL CALL TO ACTION
           ======================================================== */}
       <CtaSection />
@@ -561,4 +549,3 @@ export const HomePage: React.FC = () => {
     </div>
   );
 };
-

@@ -6,8 +6,8 @@ export const COMPANY_INFO = {
   legalName: "Dynamic Tooling Systems (DTS)",
   establishedYear: 2004,
   industry: "Automotive tooling, press components, precision manufacturing, and CNC machining",
-  tagline: "Precision Engineering. Reliable Manufacturing.",
-  subtitle: "Supplying automotive press tools, press products, precision sub-assemblies, and CNC machining solutions with uncompromised quality and dependable delivery.",
+  tagline: "Automotive tooling and press components.",
+  subtitle: "Automotive press tools, stamped components, sub-assemblies, and CNC machining from our Hosur facilities.",
   certifications: [
     {
       title: "ISO 9001:2015 Certified",
@@ -35,7 +35,8 @@ export const COMPANY_INFO = {
     workingHours: "Monday – Saturday: 8:30 AM – 6:00 PM (IST)",
     mapUrl: "https://maps.google.com/?q=Zuzuvadi,+Hosur,+Tamil+Nadu+635126"
   },
-  mission: "Looking forward to the future, the company operates in line with the 'people-oriented', 'sincere faith', and 'quality win' spirit of enterprise, striving towards excellence in the automotive manufacturing sector by providing customers with unremitting dedication to high-quality products, robust engineering support, and dependable deliveries."
+  mission: "To supply consistent tooling and components through practical engineering, controlled production, and dependable delivery.",
+  vision: "To be a dependable manufacturing partner for automotive tooling and component programs."
 };
 
 export const CAPABILITIES: Capability[] = [
@@ -560,4 +561,3 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     caption: "Office workstations for CAD tooling designers and administrative operations."
   }
 ];
-

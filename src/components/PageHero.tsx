@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
@@ -15,10 +15,40 @@ export const PageHero: React.FC<PageHeroProps> = ({
   badge,
   breadcrumb = []
 }) => {
+  const backgroundImages = [
+    'images/facilities/press-shop-bay-crane.jpg',
+    'images/facilities/press-shop-production-floor.jpg',
+    'images/facilities/tool-room-vmc-cnc-line.jpg',
+    'images/facilities/unit2-press-shop-exterior.jpg',
+  ];
+  const [backgroundIndex, setBackgroundIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setBackgroundIndex((currentIndex) => (currentIndex + 1) % backgroundImages.length);
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, [backgroundImages.length]);
+
   return (
-    <div className="relative bg-dts-navy text-white py-16 sm:py-20 overflow-hidden subtle-blueprint-bg border-b border-slate-800">
-      {/* Decorative technical grid overlay */}
-      <div className="absolute inset-0 opacity-15 pointer-events-none industrial-grid-dark" />
+    <div className="relative bg-dts-navy text-white py-16 sm:py-20 overflow-hidden border-b border-slate-800">
+      <div className="absolute inset-0 pointer-events-none">
+        {backgroundImages.map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            alt=""
+            aria-hidden="true"
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
+              index === backgroundIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-dts-navy/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dts-navy/85 via-dts-navy/60 to-dts-navy/35" />
+        <div className="absolute inset-0 industrial-grid-dark opacity-10" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
@@ -58,4 +88,3 @@ export const PageHero: React.FC<PageHeroProps> = ({
     </div>
   );
 };
-
