@@ -84,7 +84,7 @@ export const AboutPage: React.FC = () => {
               {/* Unit I */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
                 <img
-                  src="/images/facilities/unit1-tool-room-exterior.png"
+                  src="images/facilities/unit1-tool-room-exterior.png"
                   alt="Dynamic Tooling Systems Unit I Hosur Facility"
                   className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -97,7 +97,7 @@ export const AboutPage: React.FC = () => {
               {/* Unit II */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
                 <img
-                  src="/images/facilities/unit2-press-shop-exterior.jpg"
+                  src="images/facilities/unit2-press-shop-exterior.jpg"
                   alt="Dynamic Tooling Systems Unit II Press Shop Facility"
                   className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -265,7 +265,7 @@ export const AboutPage: React.FC = () => {
 
             <div className="lg:col-span-4 flex items-center justify-center p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
               <img
-                src="/images/branding/iso-9001-certification.png"
+                src="images/branding/iso-9001-certification.png"
                 alt="ISO 9001:2015 JAS-ANZ IAF Certificate Badge"
                 className="h-28 w-auto object-contain"
               />

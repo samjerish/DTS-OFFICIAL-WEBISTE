@@ -49,7 +49,7 @@ export const StartupAnimation: React.FC<StartupAnimationProps> = ({ onComplete }
           }`}
         >
           <img
-            src="/images/branding/dts-globe-logo.png"
+            src="images/branding/dts-globe-logo.png"
             alt="Dynamic Tooling Systems Logo"
             className="h-24 sm:h-28 w-auto object-contain mb-6 drop-shadow-sm"
           />

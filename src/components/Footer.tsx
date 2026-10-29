@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 space-y-5">
             <Link to="/" className="flex items-center space-x-3 group">
               <img 
-                src="/images/branding/dts-globe-logo.png" 
+                src="images/branding/dts-globe-logo.png" 
                 alt="Dynamic Tooling Systems Logo" 
                 className="h-11 w-auto object-contain bg-white/5 p-1 rounded border border-white/10"
               />
@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
             {/* ISO 9001:2015 Badge */}
             <div className="p-3.5 rounded-lg bg-slate-800/80 border border-slate-700/80 flex items-center space-x-3.5">
               <img 
-                src="/images/branding/iso-9001-certification.png" 
+                src="images/branding/iso-9001-certification.png" 
                 alt="ISO 9001:2015 Registered" 
                 className="h-11 w-auto object-contain bg-white p-1 rounded"
               />

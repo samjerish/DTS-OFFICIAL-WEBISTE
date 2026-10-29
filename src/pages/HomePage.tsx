@@ -46,7 +46,7 @@ export const HomePage: React.FC = () => {
         {/* Background Manufacturing Image with Contrast Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/facilities/press-shop-bay-crane.jpg"
+            src="images/facilities/press-shop-bay-crane.jpg"
             alt="Dynamic Tooling Systems Hosur Manufacturing Plant"
             className="w-full h-full object-cover object-center filter brightness-[0.45] contrast-105"
           />
@@ -212,7 +212,7 @@ export const HomePage: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200">
                 <img
-                  src="/images/facilities/press-shop-production-floor.jpg"
+                  src="images/facilities/press-shop-production-floor.jpg"
                   alt="DTS Hosur Production Floor"
                   className="w-full h-[460px] object-cover"
                 />
@@ -530,7 +530,7 @@ export const HomePage: React.FC = () => {
               {/* Certificate Badge Display */}
               <div className="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-slate-200 shadow-sm text-center">
                 <img
-                  src="/images/branding/iso-9001-certification.png"
+                  src="images/branding/iso-9001-certification.png"
                   alt="ISO 9001:2015 Registered - JAS-ANZ / IAF"
                   className="h-28 w-auto object-contain mb-4"
                 />

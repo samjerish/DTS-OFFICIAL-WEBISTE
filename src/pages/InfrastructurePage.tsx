@@ -23,67 +23,67 @@ export const InfrastructurePage: React.FC = () => {
   // Compile all facility images for the lightbox
   const facilityLightboxImages: LightboxImage[] = [
     {
-      src: "/images/facilities/unit1-tool-room-exterior.png",
+      src: "images/facilities/unit1-tool-room-exterior.png",
       title: "Unit I Tool Room Plant Exterior",
       caption: "External plant view of Dynamic Tooling Systems Unit I in Hosur.",
       category: "Unit I (Tool Room)"
     },
     {
-      src: "/images/facilities/tool-room-overview.jpg",
+      src: "images/facilities/tool-room-overview.jpg",
       title: "Tool Room Workshop Interior",
       caption: "Toolmakers and assembly benches for automotive stamping dies.",
       category: "Unit I (Tool Room)"
     },
     {
-      src: "/images/facilities/tool-room-vmc-cnc-line.jpg",
+      src: "images/facilities/tool-room-vmc-cnc-line.jpg",
       title: "STM Vertical Machining Center Line",
       caption: "CNC milling centers cutting precision die plates and tool steel blocks.",
       category: "Unit I (Tool Room)"
     },
     {
-      src: "/images/facilities/tool-room-stm-vl850-machining-center.jpg",
+      src: "images/facilities/tool-room-stm-vl850-machining-center.jpg",
       title: "STM VL850 VMC Machine",
       caption: "High-precision vertical machining center for automotive die contours.",
       category: "Unit I (Tool Room)"
     },
     {
-      src: "/images/facilities/tool-room-wire-edm-drilling.jpg",
+      src: "images/facilities/tool-room-wire-edm-drilling.jpg",
       title: "Ruijun Wire EDM & Spark Drilling Station",
       caption: "Precision CNC wire EDM cutting machine for hardened punches and die inserts.",
       category: "Unit I (Tool Room)"
     },
     {
-      src: "/images/facilities/unit2-press-shop-exterior.jpg",
+      src: "images/facilities/unit2-press-shop-exterior.jpg",
       title: "Unit II Press Shop Facility Exterior",
       caption: "External view of Unit II heavy press shop and logistics loading bay.",
       category: "Unit II (Press Shop)"
     },
     {
-      src: "/images/facilities/press-shop-bay-crane.jpg",
+      src: "images/facilities/press-shop-bay-crane.jpg",
       title: "Press Shop High Bay with Overhead Crane",
       caption: "Overview of press shop lines and overhead heavy-duty crane rail.",
       category: "Unit II (Press Shop)"
     },
     {
-      src: "/images/facilities/press-shop-production-floor.jpg",
+      src: "images/facilities/press-shop-production-floor.jpg",
       title: "Automotive Stamping Production Lines",
       caption: "Active continuous stamping lines for automotive sheet metal parts.",
       category: "Unit II (Press Shop)"
     },
     {
-      src: "/images/facilities/press-shop-40t-power-press-line.jpg",
+      src: "images/facilities/press-shop-40t-power-press-line.jpg",
       title: "40T Milap Power Press Line (DTS/PP-12)",
       caption: "Power press stations equipped with operator safety features.",
       category: "Unit II (Press Shop)"
     },
     {
-      src: "/images/facilities/press-shop-shearing-machine.jpg",
+      src: "images/facilities/press-shop-shearing-machine.jpg",
       title: "Haco Hydraulic Shearing Machine (DTS/SM-01)",
       caption: "Heavy hydraulic shearing machine with 0.5 to 10mm cutting capacity.",
       category: "Unit II (Press Shop)"
     },
     {
-      src: "/images/facilities/office-administration.jpg",
+      src: "images/facilities/office-administration.jpg",
       title: "Engineering & Administration Office",
       caption: "CAD tooling design engineers and administrative staff in Hosur.",
       category: "Office"
@@ -189,7 +189,7 @@ export const InfrastructurePage: React.FC = () => {
                 onClick={() => openLightbox(0)}
               >
                 <img
-                  src="/images/facilities/unit1-tool-room-exterior.png"
+                  src="images/facilities/unit1-tool-room-exterior.png"
                   alt="Unit I Tool Room Exterior"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -213,7 +213,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(1)}
             >
               <img
-                src="/images/facilities/tool-room-overview.jpg"
+                src="images/facilities/tool-room-overview.jpg"
                 alt="Tool Room Fitting Benches"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -227,7 +227,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(2)}
             >
               <img
-                src="/images/facilities/tool-room-vmc-cnc-line.jpg"
+                src="images/facilities/tool-room-vmc-cnc-line.jpg"
                 alt="STM VMC Machining Center Line"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -241,7 +241,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(3)}
             >
               <img
-                src="/images/facilities/tool-room-stm-vl850-machining-center.jpg"
+                src="images/facilities/tool-room-stm-vl850-machining-center.jpg"
                 alt="STM VL850 Vertical Machining Center"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -255,7 +255,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(4)}
             >
               <img
-                src="/images/facilities/tool-room-wire-edm-drilling.jpg"
+                src="images/facilities/tool-room-wire-edm-drilling.jpg"
                 alt="Ruijun Wire EDM and Spark Erosion"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -330,7 +330,7 @@ export const InfrastructurePage: React.FC = () => {
                 onClick={() => openLightbox(5)}
               >
                 <img
-                  src="/images/facilities/unit2-press-shop-exterior.jpg"
+                  src="images/facilities/unit2-press-shop-exterior.jpg"
                   alt="Unit II Press Shop Exterior"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -354,7 +354,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(6)}
             >
               <img
-                src="/images/facilities/press-shop-bay-crane.jpg"
+                src="images/facilities/press-shop-bay-crane.jpg"
                 alt="Press Shop Bay with Overhead Crane"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -368,7 +368,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(7)}
             >
               <img
-                src="/images/facilities/press-shop-production-floor.jpg"
+                src="images/facilities/press-shop-production-floor.jpg"
                 alt="Active Stamping Lines"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -382,7 +382,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(8)}
             >
               <img
-                src="/images/facilities/press-shop-40t-power-press-line.jpg"
+                src="images/facilities/press-shop-40t-power-press-line.jpg"
                 alt="40T Milap Power Press Line"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -396,7 +396,7 @@ export const InfrastructurePage: React.FC = () => {
               onClick={() => openLightbox(9)}
             >
               <img
-                src="/images/facilities/press-shop-shearing-machine.jpg"
+                src="images/facilities/press-shop-shearing-machine.jpg"
                 alt="Haco Shearing Machine"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -448,7 +448,7 @@ export const InfrastructurePage: React.FC = () => {
                 onClick={() => openLightbox(10)}
               >
                 <img
-                  src="/images/facilities/office-administration.jpg"
+                  src="images/facilities/office-administration.jpg"
                   alt="DTS Engineering Office"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

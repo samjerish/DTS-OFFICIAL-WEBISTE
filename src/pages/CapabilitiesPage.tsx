@@ -101,7 +101,7 @@ export const CapabilitiesPage: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="rounded-xl overflow-hidden border border-slate-200 shadow-md">
                 <img
-                  src="/images/facilities/tool-room-overview.jpg"
+                  src="images/facilities/tool-room-overview.jpg"
                   alt="DTS Tool Room Workshop"
                   className="w-full h-72 object-cover"
                 />
@@ -118,7 +118,7 @@ export const CapabilitiesPage: React.FC = () => {
               <div>
                 <div className="h-44 bg-white rounded-lg border border-slate-200 p-3 mb-4 flex items-center justify-center overflow-hidden">
                   <img
-                    src="/images/products/tool-cam-piercing.png"
+                    src="images/products/tool-cam-piercing.png"
                     alt="Cam-Piercing Tool"
                     className="max-h-full max-w-full object-contain"
                   />
@@ -145,7 +145,7 @@ export const CapabilitiesPage: React.FC = () => {
               <div>
                 <div className="h-44 bg-white rounded-lg border border-slate-200 p-3 mb-4 flex items-center justify-center overflow-hidden">
                   <img
-                    src="/images/products/tool-forming.png"
+                    src="images/products/tool-forming.png"
                     alt="Forming Tool"
                     className="max-h-full max-w-full object-contain"
                   />
@@ -172,7 +172,7 @@ export const CapabilitiesPage: React.FC = () => {
               <div>
                 <div className="h-44 bg-white rounded-lg border border-slate-200 p-3 mb-4 flex items-center justify-center overflow-hidden">
                   <img
-                    src="/images/products/tool-trimming.png"
+                    src="images/products/tool-trimming.png"
                     alt="Trimming Tool"
                     className="max-h-full max-w-full object-contain"
                   />
@@ -218,7 +218,7 @@ export const CapabilitiesPage: React.FC = () => {
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="rounded-xl overflow-hidden border border-slate-200 shadow-md">
                 <img
-                  src="/images/facilities/press-shop-production-floor.jpg"
+                  src="images/facilities/press-shop-production-floor.jpg"
                   alt="DTS Unit II Press Shop Floor"
                   className="w-full h-72 object-cover"
                 />

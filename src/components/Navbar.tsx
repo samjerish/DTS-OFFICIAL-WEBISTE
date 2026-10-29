@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
             {/* DTS Brand Logo */}
             <Link to="/" className="flex items-center space-x-3.5 group">
               <img 
-                src="/images/branding/dts-globe-logo.png" 
+                src="images/branding/dts-globe-logo.png" 
                 alt="Dynamic Tooling Systems Logo" 
                 className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
               />
