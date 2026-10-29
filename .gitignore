@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# Testing / Production
+/dist
+/dist-ssr
+
+# Local env files
+.env.local
+.env.*.local
+
+# Vite & IDE
+.vite
+.DS_Store
+.idea
+.vscode
+
+# Temporary screenshots & extraction working files
+extracted_assets/
+*.png.tmp
+desktop_*.png
+mobile_*.png
+white_intro.png
+

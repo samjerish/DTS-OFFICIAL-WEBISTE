@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply bg-white text-dts-navy font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Industrial Grid and Pattern Accents */
+.industrial-grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(16, 29, 45, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 29, 45, 0.04) 1px, transparent 1px);
+}
+
+.industrial-grid-dark {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.subtle-blueprint-bg {
+  background-color: #101D2D;
+  background-image: 
+    radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 0),
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F5F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9AA4B2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #697586;
+}
+
