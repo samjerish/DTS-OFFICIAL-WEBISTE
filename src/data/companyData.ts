@@ -3,7 +3,7 @@ import { Product, Capability, FacilityUnit, MachineryItem, CustomerLogo, Gallery
 export const COMPANY_INFO = {
   name: "Dynamic Tooling Systems",
   shortName: "DTS",
-  legalName: "Dynamic Tooling Systems (DTS)",
+  legalName: "Dynamic Tooling Systems",
   establishedYear: 2004,
   industry: "Automotive tooling, press components, precision manufacturing, and CNC machining",
   tagline: "Automotive tooling and press components.",

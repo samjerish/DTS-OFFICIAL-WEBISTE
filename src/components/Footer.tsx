@@ -189,7 +189,7 @@ export const Footer: React.FC = () => {
       <div className="border-t border-slate-800 bg-[#0A121D] py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 space-y-3 md:space-y-0">
           <div>
-            © {currentYear} Dynamic Tooling Systems (DTS). All Rights Reserved.
+            © {currentYear} Dynamic Tooling Systems. All Rights Reserved.
           </div>
           <div className="flex items-center space-x-6 text-slate-400">
             <span>Automotive Tooling & Precision Manufacturing</span>
@@ -201,4 +201,3 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
-

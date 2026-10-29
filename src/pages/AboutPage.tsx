@@ -43,7 +43,7 @@ export const AboutPage: React.FC = () => {
               </h2>
 
               <p className="text-base text-slate-700 leading-relaxed">
-                <strong className="text-dts-navy font-semibold">Dynamic Tooling Systems (DTS)</strong> was established in Hosur in 2004 to manufacture sheet metal components. The company has since expanded its tooling, machining, stamping, and inspection operations.
+                <strong className="text-dts-navy font-semibold">Dynamic Tooling Systems</strong> was established in Hosur in 2004 to manufacture sheet metal components. The company has since expanded its tooling, machining, stamping, and inspection operations.
               </p>
 
               <p className="text-base text-slate-700 leading-relaxed">
