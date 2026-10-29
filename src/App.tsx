@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { StartupAnimation } from './components/StartupAnimation';
@@ -11,7 +11,6 @@ import { ProductsPage } from './pages/ProductsPage';
 import { InfrastructurePage } from './pages/InfrastructurePage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
-import { NotFoundPage } from './pages/NotFoundPage';
 
 // ScrollToTop component ensures navigation brings user to top of page
 const ScrollToTop: React.FC = () => {
@@ -36,13 +35,16 @@ const ScrollToTop: React.FC = () => {
 
 export const App: React.FC = () => {
   const [showStartup, setShowStartup] = useState(true);
+  const basename = import.meta.env.PROD
+    ? import.meta.env.BASE_URL.replace(/\/$/, '')
+    : undefined;
 
   return (
     <>
       {showStartup && (
         <StartupAnimation onComplete={() => setShowStartup(false)} />
       )}
-      <Router>
+      <Router basename={basename}>
         <ScrollToTop />
         <div className={`flex flex-col min-h-screen transition-opacity duration-1000 ${showStartup ? 'opacity-90' : 'opacity-100'}`}>
           <Navbar />
@@ -55,7 +57,7 @@ export const App: React.FC = () => {
               <Route path="/infrastructure" element={<InfrastructurePage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="*" element={<NotFoundPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
           <Footer />
@@ -66,4 +68,3 @@ export const App: React.FC = () => {
 };
 
 export default App;
-
