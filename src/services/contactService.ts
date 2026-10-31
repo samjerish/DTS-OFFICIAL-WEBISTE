@@ -11,7 +11,8 @@ export interface SubmissionResult {
  * Service to handle corporate enquiry submissions for Dynamic Tooling Systems.
  * 
  * INTEGRATION DOCUMENTATION:
- * To enable direct server-side email or CRM delivery, configure either:
+ * The form opens a pre-addressed email when no backend is configured. For
+ * direct server-side email or CRM delivery, configure:
  * 
  * 1. REST API Webhook / Backend:
  *    Set environment variable `VITE_CONTACT_API_URL=https://your-api.com/api/enquiry`
@@ -86,28 +87,29 @@ export async function submitEnquiry(data: ContactFormData): Promise<SubmissionRe
     }
   }
 
-  // Local dispatch simulation for development / preview mode
-  // Allows testing form interactions, validation, loading states, and local retention
-  await new Promise((resolve) => setTimeout(resolve, 850));
+  const emailBody = [
+    `Reference: ${referenceNumber}`,
+    `Submitted: ${new Date().toISOString()}`,
+    '',
+    `Full Name: ${data.fullName}`,
+    `Company / Organization: ${data.companyName}`,
+    `Business Email: ${data.email}`,
+    `Phone: ${data.phone}`,
+    `Product or Service Required: ${data.productServiceRequired}`,
+    '',
+    'Project Details:',
+    data.projectDetails
+  ].join('\n');
 
-  // Store in browser local storage so user can inspect their test submission
-  try {
-    const existing = JSON.parse(localStorage.getItem('dts_enquiries') || '[]');
-    existing.push({
-      ...data,
-      referenceNumber,
-      submittedAt: new Date().toISOString()
-    });
-    localStorage.setItem('dts_enquiries', JSON.stringify(existing));
-  } catch (e) {
-    // ignore storage quota issues
-  }
+  const mailtoUrl = `mailto:dynamic_tooling@yahoo.co.in?subject=${encodeURIComponent(
+    `Website Enquiry - ${data.productServiceRequired}`
+  )}&body=${encodeURIComponent(emailBody)}`;
+
+  window.location.assign(mailtoUrl);
 
   return {
     success: true,
     referenceNumber,
-    isSimulated: true,
-    message: `Thank you, ${data.fullName}. Your quotation request for '${data.productServiceRequired || "Manufacturing"}' has been logged (Ref: ${referenceNumber}). Our Hosur engineering desk will review your specifications.`
+    message: `Your email application has been opened with the enquiry addressed to dynamic_tooling@yahoo.co.in. Reference: ${referenceNumber}.`
   };
 }
-

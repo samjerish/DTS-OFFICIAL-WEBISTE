@@ -21,36 +21,41 @@ export const CustomerMarquee: React.FC = () => {
           </p>
         </div>
 
-        {/* Verified Logos Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
-          {VERIFIED_CUSTOMERS.map((cust) => (
-            <div
-              key={cust.id}
-              className="bg-white rounded-lg p-5 border border-slate-200 shadow-sm flex flex-col items-center justify-center hover:border-dts-accent/50 hover:shadow transition-all group"
-            >
-              <div className="h-16 w-full flex items-center justify-center p-2">
-                <img
-                  src={cust.logo}
-                  alt={`${cust.name} Logo`}
-                  loading="lazy"
-                  className="max-h-full max-w-full object-contain filter group-hover:scale-105 transition-transform"
-                />
+        {/* Verified Logos Track */}
+        <div className="customer-marquee -mx-4 overflow-hidden sm:-mx-6 lg:-mx-8" aria-label="Our customers">
+          <div className="customer-marquee__track flex w-max items-stretch">
+            {[0, 1].map((copyIndex) => (
+              <div
+                key={copyIndex}
+                aria-hidden={copyIndex === 1}
+                className="customer-marquee__group flex shrink-0 items-stretch gap-4 pr-4 sm:gap-6 sm:pr-6"
+              >
+                {VERIFIED_CUSTOMERS.map((cust) => (
+                  <div
+                    key={cust.id}
+                    className="w-56 shrink-0 border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:border-dts-accent/50 hover:shadow"
+                  >
+                    <div className="flex h-16 w-full items-center justify-center p-2">
+                      <img
+                        src={cust.logo}
+                        alt={`${cust.name} Logo`}
+                        loading="lazy"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <div className="mt-3 w-full border-t border-slate-100 pt-2 text-center">
+                      <span className="block truncate text-xs font-semibold text-slate-800" title={cust.name}>
+                        {cust.name}
+                      </span>
+                      <span className="block truncate text-[10px] text-slate-500" title={cust.sector}>
+                        {cust.sector}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="mt-3 text-center border-t border-slate-100 pt-2 w-full">
-                <span className="text-xs font-semibold text-slate-800 block truncate" title={cust.name}>
-                  {cust.name}
-                </span>
-                <span className="text-[10px] text-slate-500 block truncate" title={cust.sector}>
-                  {cust.sector}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Verification Note */}
-        <div className="mt-8 text-center text-xs text-slate-500">
-          Customers shown are listed in the DTS company profile.
+            ))}
+          </div>
         </div>
 
       </div>

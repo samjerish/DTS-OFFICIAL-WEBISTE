@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowRight, ShieldCheck, CheckCircle2, FileText } from 'lucide-react';
 import { COMPANY_INFO, CAPABILITIES } from '../data/companyData';
 
 export const Footer: React.FC = () => {
@@ -51,6 +51,17 @@ export const Footer: React.FC = () => {
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Integrated Tool Room & Press Shop Facilities in Hosur</span>
             </div>
+
+            <a
+              href={`${import.meta.env.BASE_URL}documents/DTS_Company_Brochure.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-300 transition-colors hover:text-white hover:underline"
+            >
+              <FileText className="h-4 w-4" />
+              <span>View Company Brochure</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
           </div>
 
           {/* Column 2: Quick Links (2 cols) */}
@@ -191,10 +202,15 @@ export const Footer: React.FC = () => {
           <div>
             © {currentYear} Dynamic Tooling Systems. All Rights Reserved.
           </div>
-          <div className="flex items-center space-x-6 text-slate-400">
-            <span>Automotive Tooling & Precision Manufacturing</span>
-            <span>•</span>
-            <span>Hosur, Krishnagiri Dist., Tamil Nadu, India</span>
+          <div className="flex flex-col items-center gap-1 md:items-end">
+            <div className="flex items-center space-x-6 text-slate-400">
+              <span>Automotive Tooling & Precision Manufacturing</span>
+              <span>•</span>
+              <span>Hosur, Krishnagiri Dist., Tamil Nadu, India</span>
+            </div>
+            <span className="text-[11px] font-semibold tracking-wide text-slate-500">
+              Built by D SAM JERISH
+            </span>
           </div>
         </div>
       </div>

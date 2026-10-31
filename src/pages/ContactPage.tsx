@@ -174,6 +174,16 @@ export const ContactPage: React.FC = () => {
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Whether you have an immediate RFQ for automotive stamping or need expert tooling consultation for new vehicle programs, our qualified engineering team in Hosur is ready to assist.
               </p>
+              <a
+                href={`${import.meta.env.BASE_URL}documents/DTS_Company_Brochure.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-dts-accent hover:text-dts-accent-hover hover:underline"
+              >
+                <FileText className="w-4 h-4" />
+                <span>View Brochure</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
 
             {/* Verified Contact Details Cards */}
@@ -313,11 +323,6 @@ export const ContactPage: React.FC = () => {
                     <p className="font-semibold text-xs sm:text-sm">
                       {submissionResult.message}
                     </p>
-                    {submissionResult.isSimulated && (
-                      <p className="text-[11px] text-emerald-700 pt-1">
-                        Notice: Enquiry recorded in local session state (Ref: {submissionResult.referenceNumber}). To connect a live backend endpoint, specify <code>VITE_CONTACT_API_URL</code> in your environment.
-                      </p>
-                    )}
                   </div>
                 </div>
               )}
@@ -465,28 +470,20 @@ export const ContactPage: React.FC = () => {
                   >
                     <option value="">-- Select Product or Manufacturing Service --</option>
                     
-                    <optgroup label="Press Tooling Solutions">
-                      <option value="Cam-Piercing Tool">Cam-Piercing Tool</option>
-                      <option value="Forming Tool">Forming Tool</option>
-                      <option value="Trimming Tool">Trimming Tool</option>
-                      <option value="Press Tool Design & Manufacturing">Press Tool Design & Manufacturing (General)</option>
+                    <optgroup label="Products">
+                      {PRODUCTS.map((product) => (
+                        <option key={product.id} value={product.name}>
+                          {product.name}
+                        </option>
+                      ))}
                     </optgroup>
 
-                    <optgroup label="Press Products & Stamping">
+                    <optgroup label="Manufacturing Services">
+                      <option value="Press Tool Design & Manufacturing">Press Tool Design & Manufacturing</option>
                       <option value="Press Products and Sheet Metal Components">Press Products & Sheet Metal Components</option>
-                      <option value="Sub-Assembly Components">Sub-Assembly Components</option>
-                      <option value="Deep-Drawn Components">Deep-Drawn Stampings (up to 350T)</option>
-                      <option value="Embossed Heat Shields">Embossed Automotive Heat Shields</option>
-                      <option value="Perforated Exhaust Baffles">Perforated Cylindrical Baffles</option>
-                    </optgroup>
-
-                    <optgroup label="Precision Machining & Fixtures">
                       <option value="CNC Milling Works">CNC Milling Works (VMC)</option>
                       <option value="Jigs, Fixtures and Gauges">Jigs, Fixtures & Inspection Gauges</option>
                       <option value="CNC Wire EDM Cutting">CNC Wire EDM & Spark Erosion</option>
-                    </optgroup>
-
-                    <optgroup label="Development & Prototyping">
                       <option value="Sample Processing and Product Development">Sample Processing & Product Development</option>
                       <option value="General RFQ / Plant Visit">General RFQ / Plant Visit Discussion</option>
                     </optgroup>

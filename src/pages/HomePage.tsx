@@ -14,7 +14,8 @@ import {
   Phone, 
   Building2,
   Calendar,
-  Award
+  Award,
+  FileText
 } from 'lucide-react';
 import { COMPANY_INFO, CAPABILITIES, PRODUCTS, FACILITY_UNITS } from '../data/companyData';
 import { CustomerMarquee } from '../components/CustomerMarquee';
@@ -95,7 +96,7 @@ export const HomePage: React.FC = () => {
               DTS makes automotive tooling, press products, precision components, and CNC-machined parts for production programs.
             </p>
 
-            <div className="mt-9">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-dts-accent hover:bg-dts-accent-hover text-white text-sm font-semibold px-5 py-3 rounded-md shadow-lg transition-all transform active:scale-95"
@@ -103,7 +104,15 @@ export const HomePage: React.FC = () => {
                 <span>Get in Touch</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
-
+              <a
+                href={`${import.meta.env.BASE_URL}documents/DTS_Company_Brochure.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+              >
+                <FileText className="w-4 h-4" />
+                <span>View Brochure</span>
+              </a>
             </div>
 
             <div className="mt-12 pt-8 border-t border-white/15 flex flex-wrap gap-x-7 gap-y-3 text-xs text-slate-300">
@@ -117,10 +126,6 @@ export const HomePage: React.FC = () => {
                 <span>ISO 9001:2015</span>
               </div>
 
-              <div className="flex items-center space-x-2.5 whitespace-nowrap">
-                <Factory className="w-4 h-4 text-dts-accent shrink-0" />
-                <span>Two integrated units</span>
-              </div>
             </div>
           </div>
         </div>

@@ -38,6 +38,36 @@
   background-size: 24px 24px, 48px 48px, 48px 48px;
 }
 
+/* Keep section eyebrow labels as plain headings instead of pill badges. */
+[class*="uppercase"][class*="rounded-full"][class*="px-3"][class*="py-1"] {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* The duplicated track makes the loop seamless at either edge. */
+.customer-marquee__track {
+  animation: customer-marquee 36s linear infinite;
+  will-change: transform;
+}
+
+@keyframes customer-marquee {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-marquee__track {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -56,4 +86,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #697586;
 }
-
